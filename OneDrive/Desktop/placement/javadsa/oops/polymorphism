@@ -1,0 +1,56 @@
+//method overloading
+class polymorphism{
+    public static void main(String[] args){
+int a = 4;
+int b = 5;
+int c = 6;
+method obj1 = new method<>();
+System.out.print(obj1.max(a,b));
+System.out.print(obj1.max(a,b,c));
+
+    } 
+}
+class method{
+    void max(int a,int b){          //we have same method name in this function but with different number of args
+                                   //and this is called method overloading
+        if(a<b){
+            System.out.print(b);
+        }
+        else{
+            System.out.print(a);
+        }
+    }
+    void max(int a,int b,int c){
+            System.out.print(b);
+        
+    }
+}
+
+//method overriding or field overriding
+
+class animal{
+    int no_of_legs = 5;
+    String vore = "omnivore";       //same method signature in both super and sub class;
+                                        // signature in the sense it has same method name,parameter,and return type; 
+    boolean canbark(){
+       return false;                // boolean canbark() is present in both animal(parent) class and dog(child) class 
+                                   // if we create object for animal class it will print as false and if we create object for dog class it will print as true
+    }
+
+}
+class dog extends animal{
+    String vore = "carnivore";
+    boolean canbark(){
+        return true;
+    }
+}
+class cat extends animal{
+    int no_of_legs = 4;
+}
+class Main{
+    public static void main(String[] args){
+        dog obj = new dog();
+        System.out.print(obj.canbark());
+
+    }
+}
